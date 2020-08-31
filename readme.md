@@ -4,19 +4,19 @@ By Gustavo A Gomez
 
 This is an API component that resumes the implementation of test applications online using PHP asa a backend programming language and web REST services with JSON as input/output parameters.
 
-Requirements:
+<b>Requirements:</b>
 - Apache 2.4
 - PHP 7+
 
-Instalation:
+<b>Instalation:</b>
 Deploy on the public folder (htdocs) on an apache web server.
 
-Structure:
+<b>Structure:</b>
 Directories
 
-- config: Database connection
+- config: Database connection (uses json files to store and retrieving data)
 	- database.php
-- data: Data structure using json files
+- data: Data structure (json files only displayed as example)
 	- asses_answer.json
 	- assesments.json
 	- takers.json
@@ -47,6 +47,7 @@ Assuming local web server responding on http://localhost/assesments/
 - Method: POST
 - URL: http://localhost/assesments/test/create.php
 - data:<br> 
+<code>
 {
 	{"test_id":"2","n_questions":"15",
 	    "questions":{
@@ -86,13 +87,24 @@ Assuming local web server responding on http://localhost/assesments/
 	"time":"60"
 	}
 }
+</code>
 
 Example 2: <b>Create Assesment</b>
 - Method: POST
 - URL: http://localhost/assesments/assesment/create.php
 - data:<br> 
-{"first_name":"Gustavo","last_name":"Gomez","email":"guado0419@gmail.com"}
+<code>
+	{"first_name":"Gustavo","last_name":"Gomez","email":"guado0419@gmail.com"}
+</code>
 
 Example 3: <b>Get Assesment by taker</b>
 - Method: GET
 - URL: http://localhost/assesments/assesment/get_assesmentbytaker.php?taker=guado0419@gmail.com
+
+Example 4: <b>Submit Assesment answer</b>
+- Method: POST
+- URL: http://localhost/assesments/asses_answer/create.php
+- data: <br>
+<code>
+	{"session_id":"6a846640-687f-9c41-6abb-5f4c3a16eeeb","question":"q1","option_answered":"opt2"}	
+</code>
