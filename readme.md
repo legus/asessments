@@ -5,8 +5,8 @@ By Gustavo A Gomez
 This is an API component that resumes the implementation of test applications online using PHP asa a backend programming language and web REST services with JSON as input/output parameters.
 
 Requirements:
-Apache 2.4
-PHP 7+
+- Apache 2.4
+- PHP 7+
 
 Instalation:
 Deploy on the public folder (htdocs) on an apache web server.
@@ -41,12 +41,12 @@ Directories
 How to use:
 Access the services using http methods GET and POST in your local web server
 
-Example: Create test
+Example 1: <b>Create test</b>
 Assuming local web server responding on http://localhost/assesments/
 
-Method: POST
-URL: http://localhost/assesments/test/create.php
-data: 
+- Method: POST
+- URL: http://localhost/assesments/test/create.php
+- data:<br> 
 {
 	{"test_id":"2","n_questions":"15",
 	    "questions":{
@@ -86,3 +86,13 @@ data:
 	"time":"60"
 	}
 }
+
+Example 2: <b>Create Assesment</b>
+- Method: POST
+- URL: http://localhost/assesments/assesment/create.php
+- data:<br> 
+{"first_name":"Gustavo","last_name":"Gomez","email":"guado0419@gmail.com"}
+
+Example 3: <b>Get Assesment by taker</b>
+- Method: GET
+- URL: http://localhost/assesments/assesment/get_assesmentbytaker.php?taker=guado0419@gmail.com
